@@ -5,7 +5,7 @@ function Contact() {
     return (
         <section className="contact">
             <h2>Contactos</h2>
-            <p>Espero tu contacto para discutir tu próximo proyecto</p>
+            <p>Espero tu contacto para discutir tu proximo proyecto</p>
 
             <form>
                 <label htmlFor="name">Nombre</label>
