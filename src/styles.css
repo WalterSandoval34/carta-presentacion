@@ -1,9 +1,64 @@
-.header {
-  background-color: rgb(37, 33, 58);
-  color: white;
-  text-align: center;
-  padding: 20px;
+.header{
+  position: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
 }
+.container{
+  display: flex;
+  justify-content:center;
+}
+
+.header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;;
+  display: flex;
+  gap: 20px; 
+}
+
+.header a {
+  text-decoration: none;  
+  color: #fff;
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.header a:hover { 
+  color: #ff9800;
+}
+
+.header a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #ff9800;
+  transition: width 0.3s ease;
+}
+
+.header a:hover::after {
+  width: 100%;
+}
+
+.header a.active::before {
+  top: -5px;  
+}
+
+.header a.active::after {
+  bottom: -5px; 
+}
+
+
 
 .services {
   max-width: 1400px;
@@ -16,11 +71,44 @@
 }
 
 .footer {
-  background-color: rgb(37, 33, 58);
+  background: linear-gradient(135deg, #1e1e2f, #333);
   text-align: center;
-  padding: 15px;
-  color: white;
+  padding: 20px;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
 }
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.footer a {
+  color: #ff9800;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer a:hover {
+  color: #fff;
+  transform: scale(1.1); /* efecto dinámico */
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: #ff9800;
+  border-radius: 2px;
+}
+
 
 .contact {
   max-width: 1400px;
@@ -163,4 +251,25 @@ button:hover {
 .gallery-img:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+html, body, #root{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  padding: 10px;
 }
